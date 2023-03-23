@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 function HomePage() {
     const [phones, setPhones] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -30,6 +31,7 @@ function HomePage() {
                         <p>{phone.screen}</p>
                         <p>{phone.processor}</p>
                         <p>{phone.ram}</p>
+                        <Link to={`/${phone.id}`}><button type="button">Details</button></Link>
                     </div>
                 )
                })} 
