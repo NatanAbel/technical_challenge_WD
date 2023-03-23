@@ -14,8 +14,8 @@ router.get("/", async(req, res) => {
 
 router.get("/:id",async (req, res) => {
     try{
-        const id = req.params.id
-        const OnePhone = await phones.findById(id)
+        const id = parseInt(req.params.id)
+        const OnePhone = phones.find(phone=>phone.id === id)
          res.json(OnePhone);
     }catch(e){
         console.log(e)
